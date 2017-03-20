@@ -47,6 +47,7 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 RUN apt-get update -qq && \
   apt-get upgrade -yqq && \
   apt-get -yqq install varnish && \
+	apt-get install nano && \
   apt-get -yqq clean
 
 # Make our custom VCLs available on the container
@@ -60,9 +61,9 @@ ENV VARNISH_PORT 80
 EXPOSE 80
 
 # Expose volumes to be able to use data containers
-VOLUMES ["/var/lib/varnish", "/etc/varnish"]
+#VOLUMES ["/var/lib/varnish", "/etc/varnish"]
 
 ADD start.sh /start.sh
 
 # overwrite this with 'CMD []' in a dependent Dockerfile
-CMD ["/bin/bash /start.sh"]
+CMD ["/bin/bash"]
