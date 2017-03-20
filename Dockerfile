@@ -66,4 +66,4 @@ EXPOSE 80
 ADD start.sh /start.sh
 
 # overwrite this with 'CMD []' in a dependent Dockerfile
-CMD ["/bin/bash"]
+CMD ["/start.sh"]
