@@ -29,14 +29,13 @@ You can easily build the image.
 ### How to run the container
 The container will be an ubuntu image with the varnish application.
 
-	$ sudo docker run -i -t -p 192.168.1.200:80:80 -e VARNISH_BACKEND_IP=192.168.1.215 VARNISH_BACKEND_IP_1=192.168.1.211 miltiadisalexis/ubuntu-varnish /start.sh
-
+	$ sudo docker run -i -t -p 192.168.1.200:80:80 -e VARNISH_BACKEND_IP=192.168.1.215 -e VARNISH_BACKEND_IP_1=192.168.1.211 miltiadisalexis/ubuntu-varnish /start.sh
 
 
 #### Access the bash
 If you want to enter in the container with root permissions.
 
-	$ sudo docker run -i -t -p 192.168.1.200:80:80 -e VARNISH_BACKEND_IP=192.168.1.215 VARNISH_BACKEND_IP_1=192.168.1.211 miltiadisalexis/ubuntu-varnish bash
+	$ sudo docker run -i -t -p 192.168.1.200:80:80 -e VARNISH_BACKEND_IP=192.168.1.215 -e VARNISH_BACKEND_IP_1=192.168.1.211 miltiadisalexis/ubuntu-varnish bash
 
 
 ### Stop the container
