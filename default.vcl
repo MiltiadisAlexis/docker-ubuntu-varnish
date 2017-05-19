@@ -4,9 +4,24 @@
 # Default backend definition.  Set this to point to your content
 # server.
 #
-backend default {
+
+
+backend foo {
     .host = "${VARNISH_BACKEND_IP}";
     .port = "${VARNISH_BACKEND_PORT}";
+}
+
+backend bar {
+    .host = "${VARNISH_BACKEND_IP_1}";
+    .port = "${VARNISH_BACKEND_PORT}";
+}
+
+sub vcl_recv {
+    if (req.url ~ "^/foo/") {
+        set req.backend = foo;
+    } else {
+        set req.backend = bar;
+    }
 }
 #
 # Below is a commented-out copy of the default VCL logic.  If you
