@@ -1,4 +1,4 @@
-# Deploy Ubuntu 16.04 and Varnish with Docker
+# Deploy Ubuntu 14.04 and Varnish with Docker
 
 ### Setup the IP for the docker container
 This will be the IP address which will serve the back-end "varnished".
